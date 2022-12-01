@@ -40,25 +40,6 @@ port_btn.addEventListener("click", (e) => {
     );
 });
 
-// ========================================
-//  lazy loading section
-// ========================================
-const imgRef = document.querySelector("img[data-src]");
-console.log(imgRef);
-
-const lazyImg = (entries) => {
-    const [entry] = entries;
-    if (!entry.isIntersecting) return;
-    entry.target.src = imgRef.dataset.src;
-};
-
-const imgObserver = new IntersectionObserver(lazyImg, {
-    root: null,
-    threshold: 0,
-    // rootMargin: "100px",
-});
-
-imgObserver.observe(imgRef);
 
 // ========================================
 //  animated counter number
